@@ -13,5 +13,6 @@ def walk_dir(dirpath):
         filename_list.extend([os.path.join(parent, filename)
                               for filename in filenames])
     n = len(filename_list)
-    filename_list = filename_list[1:n+1]
+    if filename_list[0]== dirpath+'.DS_Store':
+        filename_list = filename_list[1:n+1]
     return filename_list  
